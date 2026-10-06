@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  cowrie:
+    image: cowrie/cowrie:latest
+    container_name: cowrie_honeypot
+    ports:
+      - "22:2222"
+      - "23:2223"
+    volumes:
+      - ./cowrie-logs:/cowrie/cowrie-git/var/log/cowrie
+    restart: unless-stopped
+
+  dionaea:
+    image: dinotools/dionaea:latest
+    container_name: dionaea_honeypot
+    ports:
+      - "21:21"     # FTP
+      - "445:445"   # SMB
+      - "1433:1433" # MSSQL
+      - "3306:3306" # MySQL
+    volumes:
+      - ./dionaea-logs:/opt/dionaea/var/log
+      - ./dionaea-bincaptures:/opt/dionaea/var/dionaea/bincaptures 
+    restart: unless-stopped

@@ -1,0 +1,3 @@
+touch cowrie-logs/.gitkeep
+touch dionaea-logs/.gitkeep
+touch dionaea-binaries/.gitkeep

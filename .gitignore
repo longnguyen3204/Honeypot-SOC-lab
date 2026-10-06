@@ -1,0 +1,20 @@
+# Logs
+cowrie-logs/*
+dionaea-logs/*
+
+# Captured binaries
+dionaea-bincaptures/*
+
+# Log and json
+*.log
+*.json
+
+# Enviroment/secrets
+.env
+*.key
+*.pem
+
+# OS/editor
+.DS_Store
+*.swp
+
